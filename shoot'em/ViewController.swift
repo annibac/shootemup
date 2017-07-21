@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var bird: UIImageView!
+    @IBOutlet weak var spiderman: UIImageView!
     
     var timer: Timer!
     var timerSprite: Timer!
@@ -31,9 +31,9 @@ class ViewController: UIViewController {
     @IBAction func moveButtonTD(_ sender: UIButton) {
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (t:Timer) in
             if sender.tag == 0{
-            self.bird.center.x = self.bird.center.x - 10
-        }else{
-            self.bird.center.x = self.bird.center.x + 10
+                    self.spriteChar.center.x -= 10
+            }else{
+                    self.spriteChar.center.x += 10
             }
         })
     }
