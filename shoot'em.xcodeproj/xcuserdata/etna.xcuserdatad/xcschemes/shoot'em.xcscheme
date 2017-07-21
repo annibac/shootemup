@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "52B5E8DC1F1E0FA600BC7892"
+               BuildableName = "shoot&apos;em.app"
+               BlueprintName = "shoot&apos;em"
+               ReferencedContainer = "container:shoot&apos;em.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -12,7 +28,36 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "52B5E8F01F1E0FA600BC7892"
+               BuildableName = "shoot&apos;emTests.xctest"
+               BlueprintName = "shoot&apos;emTests"
+               ReferencedContainer = "container:shoot&apos;em.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "52B5E8FB1F1E0FA600BC7892"
+               BuildableName = "shoot&apos;emUITests.xctest"
+               BlueprintName = "shoot&apos;emUITests"
+               ReferencedContainer = "container:shoot&apos;em.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "52B5E8DC1F1E0FA600BC7892"
+            BuildableName = "shoot&apos;em.app"
+            BlueprintName = "shoot&apos;em"
+            ReferencedContainer = "container:shoot&apos;em.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -26,6 +71,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "52B5E8DC1F1E0FA600BC7892"
+            BuildableName = "shoot&apos;em.app"
+            BlueprintName = "shoot&apos;em"
+            ReferencedContainer = "container:shoot&apos;em.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -35,6 +90,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "52B5E8DC1F1E0FA600BC7892"
+            BuildableName = "shoot&apos;em.app"
+            BlueprintName = "shoot&apos;em"
+            ReferencedContainer = "container:shoot&apos;em.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
