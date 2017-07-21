@@ -11,16 +11,17 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var spiderman: UIImageView!
+    @IBOutlet weak var spriteChar: UIImageView!
+    @IBOutlet weak var spiders: UIImageView!
     
     var timer: Timer!
     var timerSprite: Timer!
     var imagePos: Int = 0
     
-    @IBOutlet weak var spriteChar: UIImageView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         timerSprite = Timer.scheduledTimer(timeInterval: 0.13, target: self, selector: #selector(changeImg), userInfo: nil, repeats: true)
+        throwSpiders(img: spiders)
     }
 
 
@@ -45,7 +46,6 @@ class ViewController: UIViewController {
     
     func changeImg()
     {
-        
         spriteChar.image = UIImage(named: "\(imagePos).png")
         if(imagePos >= 0 && imagePos != 5){
             imagePos += 1;
@@ -54,6 +54,17 @@ class ViewController: UIViewController {
         {
             imagePos = 0;
         }
+    }
+    
+    private func throwSpiders(img: UIImageView)
+    {
+        UIView.animate(withDuration: 1, animations: {
+            img.center.y = self.view.frame.minY},
+                       completion: { (true) in
+                        img.center.y = self.spriteChar.center.y
+                        img.center.x = self.spriteChar.center.x
+                        self.throwSpiders(img: img)
+        })
     }
     
 }

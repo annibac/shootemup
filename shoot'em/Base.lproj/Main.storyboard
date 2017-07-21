@@ -21,6 +21,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Brick-wall-background-03-HD-Images-41311.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="OEK-Yk-F9Z">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFw-j6-f8u">
                                 <rect key="frame" x="0.0" y="0.0" width="170" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -29,16 +33,10 @@
                                     <action selector="moveButtonTUI:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3z1-3Y-BjX"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k34-JB-r0M">
-                                <rect key="frame" x="0.0" y="482" width="375" height="132"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0.png" translatesAutoresizingMaskIntoConstraints="NO" id="AwO-G8-K8R">
+                                <rect key="frame" x="161" y="518" width="52" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0.png" translatesAutoresizingMaskIntoConstraints="NO" id="AwO-G8-K8R">
-                                        <rect key="frame" x="166" y="40" width="43" height="84"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
-                            </view>
+                            </imageView>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0o-l0-2Cb">
                                 <rect key="frame" x="205" y="0.0" width="170" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -47,11 +45,16 @@
                                     <action selector="moveButtonTUI:" destination="BYZ-38-t0r" eventType="touchUpInside" id="peZ-1B-ZgL"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="spider.png" translatesAutoresizingMaskIntoConstraints="NO" id="Oww-El-oZt">
+                                <rect key="frame" x="178" y="518" width="17" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="spiders" destination="Oww-El-oZt" id="HKi-ZY-Ike"/>
                         <outlet property="spriteChar" destination="AwO-G8-K8R" id="MhJ-bt-HSI"/>
                     </connections>
                 </viewController>
@@ -62,5 +65,7 @@
     </scenes>
     <resources>
         <image name="0.png" width="45" height="76"/>
+        <image name="Brick-wall-background-03-HD-Images-41311.jpg" width="600" height="600"/>
+        <image name="spider.png" width="120" height="96"/>
     </resources>
 </document>
