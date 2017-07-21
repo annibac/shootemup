@@ -29,11 +29,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func moveButtonTD(_ sender: UIButton) {
+        let screenSize = UIScreen.main.bounds
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (t:Timer) in
             if sender.tag == 0{
-                    self.spriteChar.center.x -= 10
+                if (self.spriteChar.center.x - 10 > 0) {
+                        self.spriteChar.center.x -= 10
+                }
             }else{
-                    self.spriteChar.center.x += 10
+                if (self.spriteChar.center.x + 10 < screenSize.width) {
+                        self.spriteChar.center.x += 10
+                }
             }
         })
     }
