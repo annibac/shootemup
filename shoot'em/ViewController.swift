@@ -30,9 +30,9 @@ class ViewController: UIViewController {
     
     @IBAction func moveButtonTD(_ sender: UIButton) {
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (t:Timer) in
-            if sender.tag == 0{
+        if (sender.tag) == 0 {
             self.spiderman.center.x -= 10
-        }else{
+        } else {
             self.spiderman.center.x += 10
             }
         })
@@ -50,6 +50,6 @@ class ViewController: UIViewController {
             imagePos = 0;
         }
     }
-    
+     
 }
 

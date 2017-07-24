@@ -25,15 +25,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="170" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="moveButtonTD:" destination="BYZ-38-t0r" eventType="touchDown" id="q51-ip-4be"/>
-                                    <action selector="moveButtonTUI:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3z1-3Y-BjX"/>
+                                    <action selector="moveButtonTD:" destination="BYZ-38-t0r" eventType="touchDown" id="taF-7h-jma"/>
+                                    <action selector="moveButtonTUI:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9hO-7t-a4F"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k34-JB-r0M">
                                 <rect key="frame" x="0.0" y="482" width="375" height="132"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0.png" translatesAutoresizingMaskIntoConstraints="NO" id="AwO-G8-K8R">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0.png" translatesAutoresizingMaskIntoConstraints="NO" id="AwO-G8-K8R" userLabel="Spiderman">
                                         <rect key="frame" x="166" y="40" width="43" height="84"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -43,8 +43,8 @@
                                 <rect key="frame" x="205" y="0.0" width="170" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="moveButtonTD:" destination="BYZ-38-t0r" eventType="touchDown" id="l1O-Hg-1wH"/>
-                                    <action selector="moveButtonTUI:" destination="BYZ-38-t0r" eventType="touchUpInside" id="peZ-1B-ZgL"/>
+                                    <action selector="moveButtonTD:" destination="BYZ-38-t0r" eventType="touchDown" id="tcl-cf-hvo"/>
+                                    <action selector="moveButtonTUI:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qdl-KM-uOa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -52,7 +52,7 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="bird" destination="AwO-G8-K8R" id="Jga-CV-j9m"/>
+                        <outlet property="spiderman" destination="AwO-G8-K8R" id="9vx-62-f6Z"/>
                         <outlet property="spriteChar" destination="AwO-G8-K8R" id="MhJ-bt-HSI"/>
                     </connections>
                 </viewController>
