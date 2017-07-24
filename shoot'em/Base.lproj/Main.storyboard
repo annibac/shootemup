@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,34 +21,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Brick-wall-background-03-HD-Images-41311.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="OEK-Yk-F9Z">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Brick-wall-background-03-HD-Images-41311.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="OEK-Yk-F9Z" userLabel="Background">
+                                <rect key="frame" x="0.0" y="-333" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Brick-wall-background-03-HD-Images-41311.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="5wA-mP-34i" userLabel="Background2">
+                                <rect key="frame" x="0.0" y="333" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFw-j6-f8u">
                                 <rect key="frame" x="0.0" y="0.0" width="170" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="moveButtonTD:" destination="BYZ-38-t0r" eventType="touchDown" id="taF-7h-jma"/>
-                                    <action selector="moveButtonTUI:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9hO-7t-a4F"/>
+                                    <action selector="moveButtonTD:" destination="BYZ-38-t0r" eventType="touchDown" id="q51-ip-4be"/>
+                                    <action selector="moveButtonTUI:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3z1-3Y-BjX"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0.png" translatesAutoresizingMaskIntoConstraints="NO" id="AwO-G8-K8R">
                                 <rect key="frame" x="161" y="518" width="52" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0.png" translatesAutoresizingMaskIntoConstraints="NO" id="AwO-G8-K8R" userLabel="Spiderman">
-                                        <rect key="frame" x="166" y="40" width="43" height="84"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
-                            </view>
+                            </imageView>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0o-l0-2Cb">
                                 <rect key="frame" x="205" y="0.0" width="170" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="moveButtonTD:" destination="BYZ-38-t0r" eventType="touchDown" id="tcl-cf-hvo"/>
-                                    <action selector="moveButtonTUI:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qdl-KM-uOa"/>
+                                    <action selector="moveButtonTD:" destination="BYZ-38-t0r" eventType="touchDown" id="l1O-Hg-1wH"/>
+                                    <action selector="moveButtonTUI:" destination="BYZ-38-t0r" eventType="touchUpInside" id="peZ-1B-ZgL"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="spider.png" translatesAutoresizingMaskIntoConstraints="NO" id="Oww-El-oZt">
@@ -60,8 +58,10 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="spiderman" destination="AwO-G8-K8R" id="9vx-62-f6Z"/>
+                        <outlet property="spiders" destination="Oww-El-oZt" id="HKi-ZY-Ike"/>
                         <outlet property="spriteChar" destination="AwO-G8-K8R" id="MhJ-bt-HSI"/>
+                        <outlet property="wall1" destination="OEK-Yk-F9Z" id="r3e-B1-Hyt"/>
+                        <outlet property="wall2" destination="5wA-mP-34i" id="LaX-UF-HXf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
