@@ -16,11 +16,10 @@ class ViewController: UIViewController {
     var timerSprite: Timer!
     var imagePos: Int = 0
     
-    @IBOutlet weak var spriteChar: UIImageView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         timerSprite = Timer.scheduledTimer(timeInterval: 0.13, target: self, selector: #selector(changeImg), userInfo: nil, repeats: true)
+        throwSpiders(img: spiders)
     }
 
 
@@ -29,6 +28,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func moveButtonTD(_ sender: UIButton) {
+        let screenSize = UIScreen.main.bounds
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (t:Timer) in
         if (sender.tag) == 0 {
             self.spiderman.center.x -= 10
@@ -40,7 +40,6 @@ class ViewController: UIViewController {
     
     func changeImg()
     {
-        
         spriteChar.image = UIImage(named: "\(imagePos).png")
         if(imagePos >= 0 && imagePos != 5){
             imagePos += 1;
