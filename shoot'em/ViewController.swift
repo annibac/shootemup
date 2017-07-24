@@ -12,6 +12,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var spiderman: UIImageView!
     @IBOutlet weak var spriteChar: UIImageView!
+    @IBOutlet weak var wall1: UIImageView!
+    @IBOutlet weak var wall2: UIImageView!
     @IBOutlet weak var spiders: UIImageView!
     
     var timer: Timer!
@@ -22,6 +24,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         timerSprite = Timer.scheduledTimer(timeInterval: 0.17, target: self, selector: #selector(changeImg), userInfo: nil, repeats: true)
         throwSpiders(img: spiders)
+        
+        moveWalls(wall2)
+        moveWalls(wall1)
     }
 
 
@@ -32,11 +37,11 @@ class ViewController: UIViewController {
     @IBAction func moveButtonTD(_ sender: UIButton) {
         let screenSize = UIScreen.main.bounds
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (t:Timer) in
-            if sender.tag == 0{
+            if (sender.tag == 0) {
                 if (self.spriteChar.center.x - 10 > 0) {
                         self.spriteChar.center.x -= 10
                 }
-            }else{
+            } else {
                 if (self.spriteChar.center.x + 10 < screenSize.width) {
                         self.spriteChar.center.x += 10
                 }
@@ -47,25 +52,39 @@ class ViewController: UIViewController {
     func changeImg()
     {
         spriteChar.image = UIImage(named: "\(imagePos).png")
-        if(imagePos >= 0 && imagePos != 5){
+        if(imagePos >= 0 && imagePos != 5) {
             imagePos += 1;
-        }
-        else
-        {
+        } else {
             imagePos = 0;
         }
     }
     
     private func throwSpiders(img: UIImageView)
     {
-        UIView.animate(withDuration: 1, animations: {
-            img.center.y = self.view.frame.minY},
-                       completion: { (true) in
-                        img.center.y = self.spriteChar.center.y
-                        img.center.x = self.spriteChar.center.x
-                        self.throwSpiders(img: img)
+        UIView.animate(withDuration: 0.5, animations: {
+            img.center.y = self.view.frame.minY
+        }, completion: { (true) in
+                img.center.y = self.spriteChar.center.y
+                img.center.x = self.spriteChar.center.x
+                self.throwSpiders(img: img)
         })
     }
     
+    private func moveWalls(_ img: UIImageView) {
+        UIView.animate(withDuration: 5, delay: 0, options: .curveLinear, animations: {
+            if (img.tag == 0) {
+                img.center.y = (self.view.frame.size.height / 2)
+            } else if (img.tag == 1) {
+                img.center.y = self.view.frame.size.height + self.view.frame.size.height / 2
+            }
+        }, completion: { (true) in
+            if (img.tag == 0) {
+                img.center.y = -(self.view.frame.size.height / 2)
+            } else if (img.tag == 1) {
+                img.center.y = self.view.frame.size.height / 2
+            }
+            self.moveWalls(img)
+        })
+    }
 }
 
