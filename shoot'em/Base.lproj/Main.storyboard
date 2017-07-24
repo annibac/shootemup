@@ -53,11 +53,16 @@
                                 <rect key="frame" x="178" y="518" width="17" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Icon-iPadPro-1" translatesAutoresizingMaskIntoConstraints="NO" id="n1I-c6-23m" userLabel="Enemy">
+                                <rect key="frame" x="71" y="20" width="58" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="Enemy" destination="n1I-c6-23m" id="iMO-7q-9EA"/>
                         <outlet property="spiders" destination="Oww-El-oZt" id="HKi-ZY-Ike"/>
                         <outlet property="spriteChar" destination="AwO-G8-K8R" id="MhJ-bt-HSI"/>
                         <outlet property="wall1" destination="OEK-Yk-F9Z" id="r3e-B1-Hyt"/>
@@ -72,6 +77,7 @@
     <resources>
         <image name="0.png" width="45" height="76"/>
         <image name="Brick-wall-background-03-HD-Images-41311.jpg" width="600" height="600"/>
+        <image name="Icon-iPadPro-1" width="83" height="83"/>
         <image name="spider.png" width="120" height="96"/>
     </resources>
 </document>
