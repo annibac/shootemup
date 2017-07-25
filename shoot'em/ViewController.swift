@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         timerSprite = Timer.scheduledTimer(timeInterval: 0.19, target: self, selector: #selector(changeImg), userInfo: nil, repeats: true)
         
-        throwSpiders(img: spiders)
+        attack()
         moveWalls(wall2)
         moveWalls(wall1)
         makeEnnemies(Enemy)
