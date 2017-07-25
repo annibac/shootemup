@@ -50,8 +50,7 @@ class ViewController: UIViewController {
         })
     }
     
-    func changeImg()
-    {
+    func changeImg() {
         spriteChar.image = UIImage(named: "\(imagePos).png")
         if(imagePos >= 0 && imagePos != 5) {
             imagePos += 1;
@@ -63,7 +62,7 @@ class ViewController: UIViewController {
     private func attack() {
         let imageName = "Spider_Web_Small.png"
         let image = UIImage(named: imageName)
-        Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { (_) in
+        Timer.scheduledTimer(withTimeInterval: 0.4, repeats: true) { (_) in
                 let imageView = UIImageView(image: image!)
                 imageView.center.y = self.spriteChar.center.y + 10
                 imageView.center.x = self.spriteChar.center.x
@@ -73,8 +72,7 @@ class ViewController: UIViewController {
         }
     }
     
-    private func throwSpider(img: UIImageView)
-    {
+    private func throwSpider(img: UIImageView) {
         UIView.animate(withDuration: 1, animations: {
             img.center.y = self.view.frame.minY
         }, completion: { (true) in
