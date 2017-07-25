@@ -42,6 +42,7 @@
 		52B5E8EB1F1E0FA600BC7892 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B5E8E91F1E0FA600BC7892 /* LaunchScreen.storyboard */; };
 		52B5E8F61F1E0FA600BC7892 /* shoot_emTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B5E8F51F1E0FA600BC7892 /* shoot_emTests.swift */; };
 		52B5E9011F1E0FA600BC7892 /* shoot_emUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B5E9001F1E0FA600BC7892 /* shoot_emUITests.swift */; };
+		52D5A5D11F272B030025AB6A /* Spider_Web.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D5A5D01F272B030025AB6A /* Spider_Web.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		52B5E8FC1F1E0FA600BC7892 /* shoot'emUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "shoot'emUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B5E9001F1E0FA600BC7892 /* shoot_emUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shoot_emUITests.swift; sourceTree = "<group>"; };
 		52B5E9021F1E0FA600BC7892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52D5A5D01F272B030025AB6A /* Spider_Web.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spider_Web.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				528059361F224AE900FAFE2A /* Brick-wall-background-03-HD-Images-41311.jpg */,
+				52D5A5D01F272B030025AB6A /* Spider_Web.png */,
 				528059341F223A9100FAFE2A /* spider.png */,
 				528059001F21EFDF00FAFE2A /* 0.png */,
 				528059011F21EFDF00FAFE2A /* 1.png */,
@@ -329,6 +332,7 @@
 				528059251F21EFDF00FAFE2A /* 20.png in Resources */,
 				528059231F21EFDF00FAFE2A /* 19.png in Resources */,
 				528059351F223A9100FAFE2A /* spider.png in Resources */,
+				52D5A5D11F272B030025AB6A /* Spider_Web.png in Resources */,
 				5280592B1F21EFDF00FAFE2A /* 26.png in Resources */,
 				528059201F21EFDF00FAFE2A /* 16.png in Resources */,
 				528059241F21EFDF00FAFE2A /* 2.png in Resources */,

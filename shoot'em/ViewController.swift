@@ -39,12 +39,12 @@ class ViewController: UIViewController {
         let screenSize = UIScreen.main.bounds
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (t:Timer) in
             if (sender.tag == 0) {
-                if (self.spriteChar.center.x - 10 > 0) {
-                        self.spriteChar.center.x -= 10
+                if (self.spriteChar.center.x - 8 > 0) {
+                        self.spriteChar.center.x -= 8
                 }
             } else {
-                if (self.spriteChar.center.x + 10 < screenSize.width) {
-                        self.spriteChar.center.x += 10
+                if (self.spriteChar.center.x + 8 < screenSize.width) {
+                        self.spriteChar.center.x += 8
                 }
             }
         })
@@ -75,7 +75,7 @@ class ViewController: UIViewController {
     
     private func throwSpider(img: UIImageView)
     {
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 1, animations: {
             img.center.y = self.view.frame.minY
         }, completion: { (true) in
                 img.removeFromSuperview()
@@ -83,7 +83,7 @@ class ViewController: UIViewController {
     }
     
     private func moveWalls(_ img: UIImageView) {
-        UIView.animate(withDuration: 5, delay: 0, options: .curveLinear, animations: {
+        UIView.animate(withDuration: 15, delay: 0, options: [.curveLinear], animations: {
             if (img.tag == 0) {
                 img.center.y = (self.view.frame.size.height / 2)
             } else if (img.tag == 1) {
