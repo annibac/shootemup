@@ -24,8 +24,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         timerSprite = Timer.scheduledTimer(timeInterval: 0.19, target: self, selector: #selector(changeImg), userInfo: nil, repeats: true)
-        throwSpiders(img: spiders)
         
+        throwSpiders(img: spiders)
         moveWalls(wall2)
         moveWalls(wall1)
         makeEnnemies(Enemy)
@@ -40,12 +40,12 @@ class ViewController: UIViewController {
         let screenSize = UIScreen.main.bounds
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (t:Timer) in
             if (sender.tag == 0) {
-                if (self.spriteChar.center.x - 8 > 0) {
-                        self.spriteChar.center.x -= 8
+                if (self.spriteChar.center.x - 12 > 0) {
+                        self.spriteChar.center.x -= 12
                 }
             } else {
-                if (self.spriteChar.center.x + 8 < screenSize.width) {
-                        self.spriteChar.center.x += 8
+                if (self.spriteChar.center.x + 12 < screenSize.width) {
+                        self.spriteChar.center.x += 12
                 }
             }
         })
