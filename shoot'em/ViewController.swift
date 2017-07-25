@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        timerSprite = Timer.scheduledTimer(timeInterval: 0.13, target: self, selector: #selector(changeImg), userInfo: nil, repeats: true)
+        timerSprite = Timer.scheduledTimer(timeInterval: 0.19, target: self, selector: #selector(changeImg), userInfo: nil, repeats: true)
         attack()
         
         moveWalls(wall2)
@@ -61,11 +61,11 @@ class ViewController: UIViewController {
     }
     
     private func attack() {
-        let imageName = "spider.png"
+        let imageName = "Spider_Web_Small.png"
         let image = UIImage(named: imageName)
         Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { (_) in
                 let imageView = UIImageView(image: image!)
-                imageView.center.y = self.spriteChar.center.y
+                imageView.center.y = self.spriteChar.center.y + 10
                 imageView.center.x = self.spriteChar.center.x
             
                 self.view.addSubview(imageView)
