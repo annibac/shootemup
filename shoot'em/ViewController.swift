@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var spriteChar: UIImageView!
     @IBOutlet weak var wall1: UIImageView!
     @IBOutlet weak var wall2: UIImageView!
-    @IBOutlet weak var spiders: UIImageView!
     @IBOutlet weak var Enemy: UIImageView!
     
     var timer: Timer!
@@ -24,7 +23,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         timerSprite = Timer.scheduledTimer(timeInterval: 0.13, target: self, selector: #selector(changeImg), userInfo: nil, repeats: true)
-        throwSpiders(img: spiders)
+        attack()
         
         moveWalls(wall2)
         moveWalls(wall1)
@@ -61,14 +60,25 @@ class ViewController: UIViewController {
         }
     }
     
-    private func throwSpiders(img: UIImageView)
+    private func attack() {
+        let imageName = "spider.png"
+        let image = UIImage(named: imageName)
+        Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { (_) in
+                let imageView = UIImageView(image: image!)
+                imageView.center.y = self.spriteChar.center.y
+                imageView.center.x = self.spriteChar.center.x
+            
+                self.view.addSubview(imageView)
+                self.throwSpider(img: imageView)
+        }
+    }
+    
+    private func throwSpider(img: UIImageView)
     {
         UIView.animate(withDuration: 0.5, animations: {
             img.center.y = self.view.frame.minY
         }, completion: { (true) in
-                img.center.y = self.spriteChar.center.y
-                img.center.x = self.spriteChar.center.x
-                self.throwSpiders(img: img)
+                img.removeFromSuperview()
         })
     }
     
@@ -91,8 +101,7 @@ class ViewController: UIViewController {
     
     private func makeEnnemies(_ img: UIImageView) {
         UIView.animate(withDuration: 4, delay: 0,
-            
-                       options: .curveLinear, animations: {
+            options: .curveLinear, animations: {
             img.center.y = self.view.frame.size.height
         }, completion: { (true) in
             img.center.y = -10
