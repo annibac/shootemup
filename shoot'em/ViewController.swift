@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var wall1: UIImageView!
     @IBOutlet weak var wall2: UIImageView!
     @IBOutlet weak var spiders: UIImageView!
+    @IBOutlet weak var Enemy: UIImageView!
     
     var timer: Timer!
     var timerSprite: Timer!
@@ -27,6 +28,7 @@ class ViewController: UIViewController {
         
         moveWalls(wall2)
         moveWalls(wall1)
+        makeEnnemies(Enemy)
     }
 
 
@@ -84,6 +86,18 @@ class ViewController: UIViewController {
                 img.center.y = self.view.frame.size.height / 2
             }
             self.moveWalls(img)
+        })
+    }
+    
+    private func makeEnnemies(_ img: UIImageView) {
+        UIView.animate(withDuration: 4, delay: 0,
+            
+                       options: .curveLinear, animations: {
+            img.center.y = self.view.frame.size.height
+        }, completion: { (true) in
+            img.center.y = -10
+            img.center.x = CGFloat(arc4random_uniform(UInt32(self.view.frame.size.height)))
+            self.makeEnnemies(img)
         })
     }
 }
