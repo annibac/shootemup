@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MenuViewController-->
         <scene sceneID="ChI-Cr-TZ7">
             <objects>
-                <viewController id="Wt0-rV-xN2" sceneMemberID="viewController">
+                <viewController id="Wt0-rV-xN2" userLabel="MenuViewController" customClass="MenuViewController" customModule="shoot_em" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="py0-S8-syz"/>
                         <viewControllerLayoutGuide type="bottom" id="RpU-0K-Abb"/>
@@ -32,12 +32,19 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="baJ-0L-9vc"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="MenuToGame" id="BKc-g3-OvI"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SZQ-on-Vhq">
+                                <rect key="frame" x="0.0" y="348" width="375" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="difficultyPicker" destination="SZQ-on-Vhq" id="IpK-Z1-Feo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0xr-lX-i0t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -46,7 +53,7 @@
         <!--GameViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="GameViewController" customClass="ViewController" customModule="shoot_em" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="GameViewController" customClass="GameViewController" customModule="shoot_em" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
