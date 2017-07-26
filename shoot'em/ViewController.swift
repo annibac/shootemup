@@ -28,7 +28,7 @@ class GameViewController: UIViewController {
         moveWalls(wall2)
         moveWalls(wall1)
         sendEnemies()
-        timerSprite = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(collisons), userInfo: nil, repeats: true)
+        timerSprite = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(collisons), userInfo: nil, repeats: true)
     }
 
 
@@ -84,7 +84,7 @@ class GameViewController: UIViewController {
     }
     
     private func moveWalls(_ img: UIImageView) {
-        UIView.animate(withDuration: 15, delay: 0, options: [.curveLinear], animations: {
+        UIView.animate(withDuration: 18, delay: 0, options: [.curveLinear], animations: {
             if (img.tag == 0) {
                 img.center.y = (self.view.frame.size.height / 2)
             } else if (img.tag == 1) {
@@ -103,7 +103,7 @@ class GameViewController: UIViewController {
     private func sendEnemies() {
         let imageName = "100.png"
         let image = UIImage(named: imageName)
-        let t = TimeInterval(6 / (difficulty + 1))
+        let t = TimeInterval(4 / (difficulty + 1))
         Timer.scheduledTimer(withTimeInterval: t, repeats: true) { (_) in
             let imageView = UIImageView(image: image!)
             imageView.center.y = -10
@@ -134,7 +134,9 @@ class GameViewController: UIViewController {
                 }
             }
             if(enemy.layer.presentation()?.frame.intersects((spriteChar.layer.presentation()?.frame)!) == true){
-                print("GAME OVER");
+                //let newViewController = ScoreViewController()
+                //self.navigationController?.pushViewController(newViewController, animated: true)
+                print("game over")
             }
         }
     }

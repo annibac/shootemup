@@ -104,6 +104,24 @@
             </objects>
             <point key="canvasLocation" x="10" y="-30"/>
         </scene>
+        <!--Score View Controller-->
+        <scene sceneID="Bmz-QD-NYy">
+            <objects>
+                <viewController id="smf-ZJ-Hd7" customClass="ScoreViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KIm-bh-1tP"/>
+                        <viewControllerLayoutGuide type="bottom" id="18i-kK-xTT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="N3D-Di-9cJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bEL-Xq-MuQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="770" y="-30"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Brick-wall-background-03-HD-Images-41311.jpg" width="600" height="600"/>
