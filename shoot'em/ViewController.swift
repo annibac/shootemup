@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         attack()
         moveWalls(wall2)
         moveWalls(wall1)
-        makeEnnemies(Enemy)
+        sendEnemies()
     }
 
 
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
         let image = UIImage(named: imageName)
         Timer.scheduledTimer(withTimeInterval: 0.4, repeats: true) { (_) in
                 let imageView = UIImageView(image: image!)
-                imageView.center.y = self.spriteChar.center.y + 10
+                imageView.center.y = self.spriteChar.center.y - 20
                 imageView.center.x = self.spriteChar.center.x
             
                 self.view.addSubview(imageView)
@@ -97,14 +97,26 @@ class ViewController: UIViewController {
         })
     }
     
-    private func makeEnnemies(_ img: UIImageView) {
+    private func sendEnemies() {
+        let imageName = "100.png"
+        let image = UIImage(named: imageName)
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (_) in
+            let imageView = UIImageView(image: image!)
+            imageView.center.y = -10
+            imageView.center.x = CGFloat(arc4random_uniform(UInt32(self.view.frame.size.width)))
+            
+            self.view.addSubview(imageView)
+            self.makeEnemy(imageView)
+        }
+    }
+    
+    private func makeEnemy(_ img: UIImageView) {
         UIView.animate(withDuration: 4, delay: 0,
             options: .curveLinear, animations: {
-            img.center.y = self.view.frame.size.height
+            img.center.y = self.view.frame.size.height + 30
+            img.center.x = CGFloat(arc4random_uniform(UInt32(self.view.frame.size.width)))
         }, completion: { (true) in
-            img.center.y = -10
-            img.center.x = CGFloat(arc4random_uniform(UInt32(self.view.frame.size.height)))
-            self.makeEnnemies(img)
+            img.removeFromSuperview()
         })
     }
 }
