@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         attack()
         moveWalls(wall2)
         moveWalls(wall1)
-        makeEnnemies(Enemy)
+        sendEnnemies(Enemy)
         timerSprite = Timer.scheduledTimer(timeInterval: 0.19, target: self, selector: #selector(collisons), userInfo: nil, repeats: true)
     }
 
