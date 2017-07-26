@@ -130,11 +130,16 @@ class GameViewController: UIViewController {
         for enemy in enemies {
             for shot in shots {
                 if(enemy.layer.presentation()?.frame.intersects((shot.layer.presentation()?.frame)!) == true){
-                    enemy.image = UIImage(named: "spider.png")
+                    enemy.image = UIImage(named: "Explode.png")
+                    let when = DispatchTime.now() + 0.2
+                    DispatchQueue.main.asyncAfter(deadline: when) {
+                        enemy.image = nil;
+                    }
                 }
             }
         }
     }
+    
 }
 
 
