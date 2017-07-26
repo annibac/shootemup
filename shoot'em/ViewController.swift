@@ -10,7 +10,6 @@ import UIKit
 
 class GameViewController: UIViewController {
 
-    @IBOutlet weak var spiderman: UIImageView!
     @IBOutlet weak var spriteChar: UIImageView!
     @IBOutlet weak var wall1: UIImageView!
     @IBOutlet weak var wall2: UIImageView!
@@ -25,11 +24,11 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         timerSprite = Timer.scheduledTimer(timeInterval: 0.19, target: self, selector: #selector(changeImg), userInfo: nil, repeats: true)
-        
         attack()
         moveWalls(wall2)
         moveWalls(wall1)
-        sendEnemies()
+        sendEnnemies(Enemy)
+        timerSprite = Timer.scheduledTimer(timeInterval: 0.19, target: self, selector: #selector(collisons), userInfo: nil, repeats: true)
     }
 
 
@@ -125,6 +124,12 @@ class GameViewController: UIViewController {
             self.enemies.remove(at: self.enemies.index(of: img)!)
             img.removeFromSuperview()
         })
+    }
+    
+    func collisons (){
+        if(spriteChar.layer.presentation()?.frame.intersects((Enemy.layer.presentation()?.frame)!) == true){
+            Enemy.image = UIImage(named: "spider.png")
+        }
     }
 }
 
