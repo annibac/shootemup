@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         moveWalls(wall2)
         moveWalls(wall1)
         sendEnemies()
-        timerSprite = Timer.scheduledTimer(timeInterval: 0.19, target: self, selector: #selector(collisons), userInfo: nil, repeats: true)
+        timerSprite = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(collisons), userInfo: nil, repeats: true)
     }
 
 
@@ -120,8 +120,10 @@ class ViewController: UIViewController {
     }
     
     func collisons (){
-        if(spriteChar.layer.presentation()?.frame.intersects((Enemy.layer.presentation()?.frame)!) == true){
-            Enemy.image = UIImage(named: "spider.png")
+        if(spriteChar != nil && Enemy != nil){
+            if(spriteChar.layer.presentation()?.frame.intersects((Enemy.layer.presentation()?.frame)!) == true){
+                Enemy.image = UIImage(named: "spider.png")
+            }
         }
     }
 }
