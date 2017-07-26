@@ -28,7 +28,7 @@ class GameViewController: UIViewController {
         moveWalls(wall2)
         moveWalls(wall1)
         sendEnemies()
-        timerSprite = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(collisons), userInfo: nil, repeats: true)
+        timerSprite = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(collisons), userInfo: nil, repeats: true)
     }
 
 
@@ -131,8 +131,7 @@ class GameViewController: UIViewController {
             for shot in shots {
                 if(enemy.layer.presentation()?.frame.intersects((shot.layer.presentation()?.frame)!) == true){
                     enemy.image = UIImage(named: "Explode.png")
-                    let when = DispatchTime.now() + 0.2
-                    DispatchQueue.main.asyncAfter(deadline: when) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                         enemy.image = nil;
                     }
                 }
