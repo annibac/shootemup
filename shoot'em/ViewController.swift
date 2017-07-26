@@ -127,11 +127,14 @@ class GameViewController: UIViewController {
     }
     
     func collisons (){
-        if(spriteChar != nil && Enemy != nil){
-            if(spriteChar.layer.presentation()?.frame.intersects((Enemy.layer.presentation()?.frame)!) == true){
-                Enemy.image = UIImage(named: "spider.png")
+        for enemy in enemies {
+            for shot in shots {
+                if(enemy.layer.presentation()?.frame.intersects((shot.layer.presentation()?.frame)!) == true){
+                    enemy.image = UIImage(named: "spider.png")
+                }
             }
         }
     }
 }
+
 
