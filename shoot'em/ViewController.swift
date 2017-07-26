@@ -63,7 +63,7 @@ class GameViewController: UIViewController {
     private func attack() {
         let imageName = "Spider_Web_Small.png"
         let image = UIImage(named: imageName)
-        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { (_) in
+        Timer.scheduledTimer(withTimeInterval: 0.55, repeats: true) { (_) in
                 let imageView = UIImageView(image: image!)
                 imageView.center.y = self.spriteChar.center.y - 20
                 imageView.center.x = self.spriteChar.center.x
@@ -132,6 +132,9 @@ class GameViewController: UIViewController {
                 if(enemy.layer.presentation()?.frame.intersects((shot.layer.presentation()?.frame)!) == true){
                     enemy.image = nil;
                 }
+            }
+            if(enemy.layer.presentation()?.frame.intersects((spriteChar.layer.presentation()?.frame)!) == true){
+                print("GAME OVER");
             }
         }
     }
