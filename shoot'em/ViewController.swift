@@ -8,16 +8,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class GameViewController: UIViewController {
 
     @IBOutlet weak var spriteChar: UIImageView!
     @IBOutlet weak var wall1: UIImageView!
     @IBOutlet weak var wall2: UIImageView!
-    @IBOutlet weak var Enemy: UIImageView!
     
     var timer: Timer!
     var timerSprite: Timer!
     var imagePos: Int = 0
+    var difficulty: Int = 1
+    var enemies = [UIImageView]()
+    var shots = [UIImageView]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,10 +74,12 @@ class ViewController: UIViewController {
     }
     
     private func throwSpider(img: UIImageView) {
+        shots.append(img)
         UIView.animate(withDuration: 1, animations: {
             img.center.y = self.view.frame.minY
         }, completion: { (true) in
-                img.removeFromSuperview()
+            self.shots.remove(at: self.shots.index(of: img)!)
+            img.removeFromSuperview()
         })
     }
     
@@ -99,7 +103,8 @@ class ViewController: UIViewController {
     private func sendEnemies() {
         let imageName = "100.png"
         let image = UIImage(named: imageName)
-        Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (_) in
+        let t = TimeInterval(6 / (difficulty + 1))
+        Timer.scheduledTimer(withTimeInterval: t, repeats: true) { (_) in
             let imageView = UIImageView(image: image!)
             imageView.center.y = -10
             imageView.center.x = CGFloat(arc4random_uniform(UInt32(self.view.frame.size.width)))
@@ -110,11 +115,13 @@ class ViewController: UIViewController {
     }
     
     private func makeEnemy(_ img: UIImageView) {
+        enemies.append(img)
         UIView.animate(withDuration: 4, delay: 0,
             options: .curveLinear, animations: {
             img.center.y = self.view.frame.size.height + 30
             img.center.x = CGFloat(arc4random_uniform(UInt32(self.view.frame.size.width)))
         }, completion: { (true) in
+            self.enemies.remove(at: self.enemies.index(of: img)!)
             img.removeFromSuperview()
         })
     }
