@@ -63,7 +63,7 @@ class GameViewController: UIViewController {
     private func attack() {
         let imageName = "Spider_Web_Small.png"
         let image = UIImage(named: imageName)
-        Timer.scheduledTimer(withTimeInterval: 0.4, repeats: true) { (_) in
+        Timer.scheduledTimer(withTimeInterval: 0.55, repeats: true) { (_) in
                 let imageView = UIImageView(image: image!)
                 imageView.center.y = self.spriteChar.center.y - 20
                 imageView.center.x = self.spriteChar.center.x
@@ -84,7 +84,7 @@ class GameViewController: UIViewController {
     }
     
     private func moveWalls(_ img: UIImageView) {
-        UIView.animate(withDuration: 15, delay: 0, options: [.curveLinear], animations: {
+        UIView.animate(withDuration: 18, delay: 0, options: [.curveLinear], animations: {
             if (img.tag == 0) {
                 img.center.y = (self.view.frame.size.height / 2)
             } else if (img.tag == 1) {
@@ -103,7 +103,7 @@ class GameViewController: UIViewController {
     private func sendEnemies() {
         let imageName = "100.png"
         let image = UIImage(named: imageName)
-        let t = TimeInterval(6 / (difficulty + 1))
+        let t = TimeInterval(4 / (difficulty + 1))
         Timer.scheduledTimer(withTimeInterval: t, repeats: true) { (_) in
             let imageView = UIImageView(image: image!)
             imageView.center.y = -10
@@ -127,9 +127,20 @@ class GameViewController: UIViewController {
     }
     
     func collisons (){
-        if(spriteChar.layer.presentation()?.frame.intersects((Enemy.layer.presentation()?.frame)!) == true){
-            Enemy.image = UIImage(named: "spider.png")
+        for enemy in enemies {
+            for shot in shots {
+                if(enemy.layer.presentation()?.frame.intersects((shot.layer.presentation()?.frame)!) == true){
+                    enemy.image = nil;
+                }
+            }
+            if(enemy.layer.presentation()?.frame.intersects((spriteChar.layer.presentation()?.frame)!) == true){
+                //let newViewController = ScoreViewController()
+                //self.navigationController?.pushViewController(newViewController, animated: true)
+                print("game over")
+            }
         }
     }
+    
 }
+
 
