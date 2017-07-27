@@ -37,6 +37,9 @@
 		528059371F224AE900FAFE2A /* Brick-wall-background-03-HD-Images-41311.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 528059361F224AE900FAFE2A /* Brick-wall-background-03-HD-Images-41311.jpg */; };
 		5288DAE21F289D6900C22C2B /* Explode.png in Resources */ = {isa = PBXBuildFile; fileRef = 5288DAE11F289D6900C22C2B /* Explode.png */; };
 		5288DAE61F28CC3E00C22C2B /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5288DAE51F28CC3E00C22C2B /* ScoreViewController.swift */; };
+		5288DAEB1F2A2D1A00C22C2B /* fond_wanted.png in Resources */ = {isa = PBXBuildFile; fileRef = 5288DAEA1F2A2D1A00C22C2B /* fond_wanted.png */; };
+		5288DAEF1F2A2E8F00C22C2B /* parchemin021gm.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5288DAEE1F2A2E8F00C22C2B /* parchemin021gm.gif */; };
+		5288DAF11F2A342700C22C2B /* 04d1fe4857cca095fc89124f95b5dc53.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5288DAF01F2A342700C22C2B /* 04d1fe4857cca095fc89124f95b5dc53.jpg */; };
 		52B5E8E11F1E0FA600BC7892 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B5E8E01F1E0FA600BC7892 /* AppDelegate.swift */; };
 		52B5E8E31F1E0FA600BC7892 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B5E8E21F1E0FA600BC7892 /* ViewController.swift */; };
 		52B5E8E61F1E0FA600BC7892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B5E8E41F1E0FA600BC7892 /* Main.storyboard */; };
@@ -122,6 +125,10 @@
 		528059361F224AE900FAFE2A /* Brick-wall-background-03-HD-Images-41311.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Brick-wall-background-03-HD-Images-41311.jpg"; sourceTree = "<group>"; };
 		5288DAE11F289D6900C22C2B /* Explode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Explode.png; sourceTree = "<group>"; };
 		5288DAE51F28CC3E00C22C2B /* ScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScoreViewController.swift; path = ../ScoreViewController.swift; sourceTree = "<group>"; };
+		5288DAE71F2A29CD00C22C2B /* SF_Wonder_Comic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SF_Wonder_Comic.ttf; path = sprites/enemies/SF_Wonder_Comic.ttf; sourceTree = "<group>"; };
+		5288DAEA1F2A2D1A00C22C2B /* fond_wanted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fond_wanted.png; sourceTree = "<group>"; };
+		5288DAEE1F2A2E8F00C22C2B /* parchemin021gm.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = parchemin021gm.gif; sourceTree = "<group>"; };
+		5288DAF01F2A342700C22C2B /* 04d1fe4857cca095fc89124f95b5dc53.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 04d1fe4857cca095fc89124f95b5dc53.jpg; sourceTree = "<group>"; };
 		52B5E8DD1F1E0FA600BC7892 /* shoot'em.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "shoot'em.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B5E8E01F1E0FA600BC7892 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52B5E8E21F1E0FA600BC7892 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +200,8 @@
 		528058FF1F21EFDF00FAFE2A /* sprites */ = {
 			isa = PBXGroup;
 			children = (
+				5288DAEE1F2A2E8F00C22C2B /* parchemin021gm.gif */,
+				5288DAEA1F2A2D1A00C22C2B /* fond_wanted.png */,
 				5288DAE11F289D6900C22C2B /* Explode.png */,
 				528059361F224AE900FAFE2A /* Brick-wall-background-03-HD-Images-41311.jpg */,
 				E423CE761F2743C400F684B8 /* Spider_Web_Small.png */,
@@ -255,10 +264,12 @@
 				528058FF1F21EFDF00FAFE2A /* sprites */,
 				52D5A5D21F274C370025AB6A /* enemies */,
 				52B5E8E01F1E0FA600BC7892 /* AppDelegate.swift */,
+				5288DAE71F2A29CD00C22C2B /* SF_Wonder_Comic.ttf */,
 				52B5E8E21F1E0FA600BC7892 /* ViewController.swift */,
 				52B5E8E41F1E0FA600BC7892 /* Main.storyboard */,
 				E423CEA81F288AD700F684B8 /* MenuViewController.swift */,
 				5288DAE51F28CC3E00C22C2B /* ScoreViewController.swift */,
+				5288DAF01F2A342700C22C2B /* 04d1fe4857cca095fc89124f95b5dc53.jpg */,
 				52B5E8E71F1E0FA600BC7892 /* Assets.xcassets */,
 				52B5E8E91F1E0FA600BC7892 /* LaunchScreen.storyboard */,
 				52B5E8EC1F1E0FA600BC7892 /* Info.plist */,
@@ -457,6 +468,8 @@
 				E423CEAB1F2A200400F684B8 /* Spiderman -theme song 1960s.mp3 in Resources */,
 				5280592F1F21EFDF00FAFE2A /* 5.png in Resources */,
 				E423CE901F28863D00F684B8 /* 100.png in Resources */,
+				5288DAEB1F2A2D1A00C22C2B /* fond_wanted.png in Resources */,
+				5288DAF11F2A342700C22C2B /* 04d1fe4857cca095fc89124f95b5dc53.jpg in Resources */,
 				E423CE911F28863D00F684B8 /* 101.png in Resources */,
 				5280592D1F21EFDF00FAFE2A /* 3.png in Resources */,
 				E423CE961F28863D00F684B8 /* 106.png in Resources */,
@@ -479,6 +492,7 @@
 				5280591D1F21EFDF00FAFE2A /* 11.png in Resources */,
 				E423CE921F28863D00F684B8 /* 102.png in Resources */,
 				5280591B1F21EFDF00FAFE2A /* 1.png in Resources */,
+				5288DAEF1F2A2E8F00C22C2B /* parchemin021gm.gif in Resources */,
 				E423CEA11F28863D00F684B8 /* 117.png in Resources */,
 				E423CE9C1F28863D00F684B8 /* 112.png in Resources */,
 				528059271F21EFDF00FAFE2A /* 22.png in Resources */,
