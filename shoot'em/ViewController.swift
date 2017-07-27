@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class GameViewController: UIViewController {
 
@@ -22,11 +23,12 @@ class GameViewController: UIViewController {
     var enemies = [UIImageView]()
     var shots = [UIImageView]()
     var score: Int = 0
+    var audioPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         timerSprite = Timer.scheduledTimer(timeInterval: 0.19, target: self, selector: #selector(changeImg), userInfo: nil, repeats: true)
-        
+        playSound()
         attack()
         moveWalls(wall2)
         moveWalls(wall1)
@@ -52,6 +54,17 @@ class GameViewController: UIViewController {
                 }
             }
         })
+    }
+    
+    func playSound() {
+        let url = Bundle.main.url(forResource: "Spiderman -theme song 1960s", withExtension: "mp3")
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url!)
+            audioPlayer.prepareToPlay()
+            audioPlayer.play()
+        } catch let error as NSError {
+            print(error)
+        }
     }
     
     func changeImg() {
@@ -156,7 +169,7 @@ class GameViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print(segue)
+        audioPlayer.stop()
         if (segue.identifier == "GameToScore") {
             let v = segue.destination as! ScoreViewController
             v.score = String(score)

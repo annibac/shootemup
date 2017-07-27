@@ -71,6 +71,7 @@
 		E423CEA61F28863D00F684B8 /* 122.png in Resources */ = {isa = PBXBuildFile; fileRef = E423CE8E1F28863D00F684B8 /* 122.png */; };
 		E423CEA71F28863D00F684B8 /* 123.png in Resources */ = {isa = PBXBuildFile; fileRef = E423CE8F1F28863D00F684B8 /* 123.png */; };
 		E423CEA91F288AD700F684B8 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E423CEA81F288AD700F684B8 /* MenuViewController.swift */; };
+		E423CEAB1F2A200400F684B8 /* Spiderman -theme song 1960s.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E423CEAA1F2A200400F684B8 /* Spiderman -theme song 1960s.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +162,7 @@
 		E423CE8E1F28863D00F684B8 /* 122.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 122.png; sourceTree = "<group>"; };
 		E423CE8F1F28863D00F684B8 /* 123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123.png; sourceTree = "<group>"; };
 		E423CEA81F288AD700F684B8 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		E423CEAA1F2A200400F684B8 /* Spiderman -theme song 1960s.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Spiderman -theme song 1960s.mp3"; path = "sprites/enemies/Spiderman -theme song 1960s.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +251,7 @@
 		52B5E8DF1F1E0FA600BC7892 /* shoot'em */ = {
 			isa = PBXGroup;
 			children = (
+				E423CEAA1F2A200400F684B8 /* Spiderman -theme song 1960s.mp3 */,
 				528058FF1F21EFDF00FAFE2A /* sprites */,
 				52D5A5D21F274C370025AB6A /* enemies */,
 				52B5E8E01F1E0FA600BC7892 /* AppDelegate.swift */,
@@ -451,6 +454,7 @@
 				528059281F21EFDF00FAFE2A /* 23.png in Resources */,
 				5288DAE21F289D6900C22C2B /* Explode.png in Resources */,
 				5280591F1F21EFDF00FAFE2A /* 13.png in Resources */,
+				E423CEAB1F2A200400F684B8 /* Spiderman -theme song 1960s.mp3 in Resources */,
 				5280592F1F21EFDF00FAFE2A /* 5.png in Resources */,
 				E423CE901F28863D00F684B8 /* 100.png in Resources */,
 				E423CE911F28863D00F684B8 /* 101.png in Resources */,
