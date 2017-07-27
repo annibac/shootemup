@@ -211,7 +211,7 @@ class GameViewController: UIViewController {
         audioPlayer.stop()
         if (segue.identifier == "GameToScore") {
             let v = segue.destination as! ScoreViewController
-            v.score = String(score)
+            v.score = String(score) 
         }
     }
 }
