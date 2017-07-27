@@ -182,7 +182,8 @@ class GameViewController: UIViewController {
                             score += 1
                             makeBonus()
                             scoreText.text = "Score : " + String(score)
-                            self.enemies.remove(at: self.enemies.index(of: enemy)!)
+                            if(self.enemies.index(of: enemy) != nil){
+                                self.enemies.remove(at: self.enemies.index(of: enemy)!)}
                             enemy.removeFromSuperview()
                             self.shots.remove(at: self.shots.index(of: shot)!)
                             shot.removeFromSuperview()
@@ -211,7 +212,7 @@ class GameViewController: UIViewController {
         audioPlayer.stop()
         if (segue.identifier == "GameToScore") {
             let v = segue.destination as! ScoreViewController
-            v.score = String(score) 
+            v.score = String(score)
         }
     }
 }
