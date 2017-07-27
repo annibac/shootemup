@@ -13,6 +13,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var spriteChar: UIImageView!
     @IBOutlet weak var wall1: UIImageView!
     @IBOutlet weak var wall2: UIImageView!
+    @IBOutlet weak var scoreText: UILabel!
     
     var timer: Timer!
     var timerSprite: Timer!
@@ -139,6 +140,7 @@ class GameViewController: UIViewController {
                     if (shot.layer.presentation() != nil) {
                         if(enemy.layer.presentation()?.frame.intersects((shot.layer.presentation()?.frame)!) == true){
                             score += 1
+                            scoreText.text = "Score : " + String(score)
                             self.enemies.remove(at: self.enemies.index(of: enemy)!)
                             enemy.removeFromSuperview()
                             self.shots.remove(at: self.shots.index(of: shot)!)
