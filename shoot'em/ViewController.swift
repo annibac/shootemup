@@ -10,19 +10,24 @@ import UIKit
 import AVFoundation
 
 class GameViewController: UIViewController {
-
+    
     @IBOutlet weak var spriteChar: UIImageView!
     @IBOutlet weak var wall1: UIImageView!
     @IBOutlet weak var wall2: UIImageView!
     @IBOutlet weak var scoreText: UILabel!
     
+    var bonusScore: Int = 1
     var timer: Timer!
     var timerSprite: Timer!
+    var timerBonus: Timer!
+    var attackTimer: Timer!
     var imagePos: Int = 0
     var difficulty: Int = 1
     var enemies = [UIImageView]()
     var shots = [UIImageView]()
+    var bonuses = [UIImageView]()
     var score: Int = 0
+    var sBonus: Int = 5
     var audioPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
@@ -33,10 +38,10 @@ class GameViewController: UIViewController {
         moveWalls(wall2)
         moveWalls(wall1)
         sendEnemies()
-        timerSprite = Timer.scheduledTimer(timeInterval: 0.19, target: self, selector: #selector(collisons), userInfo: nil, repeats: true)
+        timerSprite = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(collisons), userInfo: nil, repeats: true)
     }
-
-
+    
+    
     @IBAction func moveButtonTUI(_ sender: UIButton) {
         timer.invalidate()
     }
@@ -54,6 +59,28 @@ class GameViewController: UIViewController {
                 }
             }
         })
+    }
+    
+    func makeBonus() {
+        if (score > sBonus) {
+            sBonus += 5
+            let imageName = "spider.png"
+            let image = UIImage(named: imageName)
+            let imageView = UIImageView(image: image!)
+            imageView.center.y = -10
+            imageView.center.x = CGFloat(arc4random_uniform(UInt32(self.view.frame.size.width)))
+            self.view.addSubview(imageView)
+            bonuses.append(imageView)
+            UIView.animate(withDuration: 4, animations: {
+                imageView.center.y = self.view.frame.size.height + 30
+                imageView.center.x = CGFloat(arc4random_uniform(UInt32(self.view.frame.size.width)))
+            }, completion: { (true) in
+                if (self.bonuses.index(of: imageView) != nil) {
+                    self.bonuses.remove(at: self.bonuses.index(of: imageView)!)
+                    imageView.removeFromSuperview()
+                }
+            })
+        }
     }
     
     func playSound() {
@@ -79,13 +106,13 @@ class GameViewController: UIViewController {
     private func attack() {
         let imageName = "Spider_Web_Small.png"
         let image = UIImage(named: imageName)
-        Timer.scheduledTimer(withTimeInterval: 0.55, repeats: true) { (_) in
-                let imageView = UIImageView(image: image!)
-                imageView.center.y = self.spriteChar.center.y - 20
-                imageView.center.x = self.spriteChar.center.x
+        attackTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval(0.55 / Double(bonusScore)), repeats: true) { (_) in
+            let imageView = UIImageView(image: image!)
+            imageView.center.y = self.spriteChar.center.y - 20
+            imageView.center.x = self.spriteChar.center.x
             
-                self.view.addSubview(imageView)
-                self.throwSpider(img: imageView)
+            self.view.addSubview(imageView)
+            self.throwSpider(img: imageView)
         }
     }
     
@@ -135,9 +162,9 @@ class GameViewController: UIViewController {
     private func makeEnemy(_ img: UIImageView) {
         enemies.append(img)
         UIView.animate(withDuration: 4, delay: 0,
-            options: .curveLinear, animations: {
-            img.center.y = self.view.frame.size.height + 30
-            img.center.x = CGFloat(arc4random_uniform(UInt32(self.view.frame.size.width)))
+                       options: .curveLinear, animations: {
+                        img.center.y = self.view.frame.size.height + 30
+                        img.center.x = CGFloat(arc4random_uniform(UInt32(self.view.frame.size.width)))
         }, completion: { (true) in
             if (self.enemies.index(of: img) != nil) {
                 self.enemies.remove(at: self.enemies.index(of: img)!)
@@ -153,6 +180,7 @@ class GameViewController: UIViewController {
                     if (shot.layer.presentation() != nil) {
                         if(enemy.layer.presentation()?.frame.intersects((shot.layer.presentation()?.frame)!) == true){
                             score += 1
+                            makeBonus()
                             scoreText.text = "Score : " + String(score)
                             self.enemies.remove(at: self.enemies.index(of: enemy)!)
                             enemy.removeFromSuperview()
@@ -163,6 +191,17 @@ class GameViewController: UIViewController {
                     if(enemy.layer.presentation()?.frame.intersects((spriteChar.layer.presentation()?.frame)!) == true){
                         performSegue(withIdentifier: "GameToScore", sender: nil)
                     }
+                }
+            }
+        }
+        if (bonuses.count != 0) {
+            for bonus in bonuses {
+                if(bonus.layer.presentation()?.frame.intersects((spriteChar.layer.presentation()?.frame)!) == true){
+                    bonusScore += 1
+                    attackTimer.invalidate()
+                    attack()
+                    self.bonuses.remove(at: self.bonuses.index(of: bonus)!)
+                    bonus.removeFromSuperview()
                 }
             }
         }
