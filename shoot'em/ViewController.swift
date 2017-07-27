@@ -30,7 +30,7 @@ class GameViewController: UIViewController {
         moveWalls(wall2)
         moveWalls(wall1)
         sendEnemies()
-        timerSprite = Timer.scheduledTimer(timeInterval: 0.19, target: self, selector: #selector(collisons), userInfo: nil, repeats: true)
+        timerSprite = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(collisons), userInfo: nil, repeats: true)
     }
 
 
