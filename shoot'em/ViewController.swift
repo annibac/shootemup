@@ -174,11 +174,11 @@ class GameViewController: UIViewController {
     }
     
     func collisons () {
-        for enemy in enemies  {
+        for enemy in enemies {
             if (enemy.layer.presentation() != nil && self.enemies.index(of: enemy) !=  nil) {
                 for shot in shots {
                     if (shot.layer.presentation() != nil) {
-                        if(enemy.layer.presentation()?.frame.intersects((shot.layer.presentation()?.frame)!) == true){
+                        if(self.enemies.index(of: enemy) != nil && enemy.layer.presentation()?.frame.intersects((shot.layer.presentation()?.frame)!) == true){
                             score += 1
                             makeBonus()
                             scoreText.text = "Score : " + String(score)
