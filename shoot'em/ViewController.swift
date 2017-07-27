@@ -13,6 +13,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var spriteChar: UIImageView!
     @IBOutlet weak var wall1: UIImageView!
     @IBOutlet weak var wall2: UIImageView!
+    @IBOutlet weak var scoreButton: UIButton!
     
     var timer: Timer!
     var timerSprite: Timer!
@@ -20,10 +21,13 @@ class GameViewController: UIViewController {
     var difficulty: Int = 1
     var enemies = [UIImageView]()
     var shots = [UIImageView]()
+    var score: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         timerSprite = Timer.scheduledTimer(timeInterval: 0.19, target: self, selector: #selector(changeImg), userInfo: nil, repeats: true)
+        scoreButton.isHidden = true
+        
         attack()
         moveWalls(wall2)
         moveWalls(wall1)
@@ -41,11 +45,11 @@ class GameViewController: UIViewController {
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (t:Timer) in
             if (sender.tag == 0) {
                 if (self.spriteChar.center.x - 12 > 0) {
-                        self.spriteChar.center.x -= 12
+                    self.spriteChar.center.x -= 12
                 }
             } else {
                 if (self.spriteChar.center.x + 12 < screenSize.width) {
-                        self.spriteChar.center.x += 12
+                    self.spriteChar.center.x += 12
                 }
             }
         })
@@ -130,17 +134,23 @@ class GameViewController: UIViewController {
         for enemy in enemies {
             for shot in shots {
                 if(enemy.layer.presentation()?.frame.intersects((shot.layer.presentation()?.frame)!) == true){
-                    enemy.image = nil;
+                    
+                    enemy.removeFromSuperview()
                 }
             }
             if(enemy.layer.presentation()?.frame.intersects((spriteChar.layer.presentation()?.frame)!) == true){
-                //let newViewController = ScoreViewController()
-                //self.navigationController?.pushViewController(newViewController, animated: true)
-                print("game over")
+                scoreButton.isHidden = false
             }
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print(segue)
+        if (segue.identifier == "GameToScore") {
+            //let v = segue.destination as! ScoreViewController
+            // v.score = score
+        }
+    }
 }
 
 
