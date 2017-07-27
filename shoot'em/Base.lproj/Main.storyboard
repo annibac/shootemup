@@ -128,25 +128,15 @@
                                     <action selector="moveButtonTUI:" destination="BYZ-38-t0r" eventType="touchUpInside" id="peZ-1B-ZgL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjv-30-K7o">
-                                <rect key="frame" x="112" y="190" width="151" height="144"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.001683676599134033" green="0.0" blue="0.021190900259067336" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <state key="normal" title="Go to Score"/>
-                                <connections>
-                                    <segue destination="3qM-Ud-WBf" kind="show" identifier="GameToScore" id="cNU-P0-F7N"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="scoreButton" destination="zjv-30-K7o" id="wDa-5E-ECO"/>
                         <outlet property="spriteChar" destination="AwO-G8-K8R" id="MhJ-bt-HSI"/>
                         <outlet property="wall1" destination="OEK-Yk-F9Z" id="r3e-B1-Hyt"/>
                         <outlet property="wall2" destination="5wA-mP-34i" id="LaX-UF-HXf"/>
+                        <segue destination="3qM-Ud-WBf" kind="show" identifier="GameToScore" id="OJ9-lr-64r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

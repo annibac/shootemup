@@ -13,7 +13,6 @@ class GameViewController: UIViewController {
     @IBOutlet weak var spriteChar: UIImageView!
     @IBOutlet weak var wall1: UIImageView!
     @IBOutlet weak var wall2: UIImageView!
-    @IBOutlet weak var scoreButton: UIButton!
     
     var timer: Timer!
     var timerSprite: Timer!
@@ -26,7 +25,6 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         timerSprite = Timer.scheduledTimer(timeInterval: 0.19, target: self, selector: #selector(changeImg), userInfo: nil, repeats: true)
-        scoreButton.isHidden = true
         
         attack()
         moveWalls(wall2)
@@ -82,8 +80,10 @@ class GameViewController: UIViewController {
         UIView.animate(withDuration: 1, animations: {
             img.center.y = self.view.frame.minY
         }, completion: { (true) in
-            self.shots.remove(at: self.shots.index(of: img)!)
-            img.removeFromSuperview()
+            if (self.shots.index(of: img) != nil) {
+                self.shots.remove(at: self.shots.index(of: img)!)
+                img.removeFromSuperview()
+            }
         })
     }
     
@@ -125,21 +125,30 @@ class GameViewController: UIViewController {
             img.center.y = self.view.frame.size.height + 30
             img.center.x = CGFloat(arc4random_uniform(UInt32(self.view.frame.size.width)))
         }, completion: { (true) in
-            self.enemies.remove(at: self.enemies.index(of: img)!)
-            img.removeFromSuperview()
+            if (self.enemies.index(of: img) != nil) {
+                self.enemies.remove(at: self.enemies.index(of: img)!)
+                img.removeFromSuperview()
+            }
         })
     }
     
-    func collisons (){
+    func collisons () {
         for enemy in enemies {
-            for shot in shots {
-                if(enemy.layer.presentation()?.frame.intersects((shot.layer.presentation()?.frame)!) == true){
-                    score += 1
-                    enemy.removeFromSuperview()
+            if (enemy.layer.presentation() != nil) {
+                for shot in shots {
+                    if (shot.layer.presentation() != nil) {
+                        if(enemy.layer.presentation()?.frame.intersects((shot.layer.presentation()?.frame)!) == true){
+                            score += 1
+                            self.enemies.remove(at: self.enemies.index(of: enemy)!)
+                            enemy.removeFromSuperview()
+                            self.shots.remove(at: self.shots.index(of: shot)!)
+                            shot.removeFromSuperview()
+                        }
+                    }
+                    if(enemy.layer.presentation()?.frame.intersects((spriteChar.layer.presentation()?.frame)!) == true){
+                        performSegue(withIdentifier: "GameToScore", sender: nil)
+                    }
                 }
-            }
-            if(enemy.layer.presentation()?.frame.intersects((spriteChar.layer.presentation()?.frame)!) == true){
-                scoreButton.isHidden = false
             }
         }
     }
