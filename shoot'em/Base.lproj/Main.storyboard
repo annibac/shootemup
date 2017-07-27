@@ -9,6 +9,44 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Score View Controller-->
+        <scene sceneID="gPV-oq-xkR">
+            <objects>
+                <viewController id="3qM-Ud-WBf" customClass="ScoreViewController" customModule="shoot_em" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PoL-Ef-d2b"/>
+                        <viewControllerLayoutGuide type="bottom" id="S7a-Kj-CwL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vv8-cc-02y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSC-wX-U6s">
+                                <rect key="frame" x="50" y="88" width="275" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTo-Fv-Lsz">
+                                <rect key="frame" x="121" y="298" width="133" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Go to menu"/>
+                                <connections>
+                                    <segue destination="Wt0-rV-xN2" kind="show" identifier="ScoreToMenu" id="xQw-mP-Eo1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="scoreText" destination="tSC-wX-U6s" id="w4i-Se-mhr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nWc-DC-BDF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1199.2" y="-822.63868065967017"/>
+        </scene>
         <!--MenuViewController-->
         <scene sceneID="ChI-Cr-TZ7">
             <objects>
@@ -97,7 +135,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="Go to Score"/>
                                 <connections>
-                                    <segue destination="smf-ZJ-Hd7" kind="show" id="Tge-bT-Mm6"/>
+                                    <segue destination="3qM-Ud-WBf" kind="show" identifier="GameToScore" id="cNU-P0-F7N"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -114,45 +152,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-319.19999999999999" y="-30.134932533733135"/>
-        </scene>
-        <!--ScoreViewController-->
-        <scene sceneID="Bmz-QD-NYy">
-            <objects>
-                <viewController id="smf-ZJ-Hd7" userLabel="ScoreViewController" customClass="ScoreViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="KIm-bh-1tP"/>
-                        <viewControllerLayoutGuide type="bottom" id="18i-kK-xTT"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="N3D-Di-9cJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SnG-Hr-dOh">
-                                <rect key="frame" x="138" y="286" width="98" height="95"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Menu"/>
-                                <connections>
-                                    <action selector="goToMenu:" destination="smf-ZJ-Hd7" eventType="touchUpInside" id="gLB-OQ-ICE"/>
-                                    <segue destination="Wt0-rV-xN2" kind="show" identifier="ScoreToMenu" id="cdY-vZ-AnE"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAu-mN-UuH">
-                                <rect key="frame" x="74" y="122" width="226" height="93"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="scoreText" destination="OAu-mN-UuH" id="rZx-jn-Bn1"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bEL-Xq-MuQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1199.5" y="-885.5"/>
         </scene>
     </scenes>
     <resources>

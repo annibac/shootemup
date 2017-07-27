@@ -10,12 +10,12 @@ import UIKit
 
 class ScoreViewController: UIViewController {
     
-//    @IBOutlet weak var scoreText: UILabel!
+    @IBOutlet weak var scoreText: UILabel!
     var score: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        scoreText.text = scoreText.text! + score
+        scoreText.text = scoreText.text! + score
     }
 }

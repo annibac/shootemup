@@ -21,7 +21,7 @@ class GameViewController: UIViewController {
     var difficulty: Int = 1
     var enemies = [UIImageView]()
     var shots = [UIImageView]()
-    var score: String = ""
+    var score: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -134,7 +134,7 @@ class GameViewController: UIViewController {
         for enemy in enemies {
             for shot in shots {
                 if(enemy.layer.presentation()?.frame.intersects((shot.layer.presentation()?.frame)!) == true){
-                    
+                    score += 1
                     enemy.removeFromSuperview()
                 }
             }
@@ -147,8 +147,8 @@ class GameViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print(segue)
         if (segue.identifier == "GameToScore") {
-            //let v = segue.destination as! ScoreViewController
-            // v.score = score
+            let v = segue.destination as! ScoreViewController
+            v.score = String(score)
         }
     }
 }
