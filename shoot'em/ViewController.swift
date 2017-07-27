@@ -175,7 +175,7 @@ class GameViewController: UIViewController {
     
     func collisons () {
         for enemy in enemies {
-            if (enemy.layer.presentation() != nil) {
+            if (enemy.layer.presentation() != nil && self.enemies.index(of: enemy) !=  nil) {
                 for shot in shots {
                     if (shot.layer.presentation() != nil) {
                         if(enemy.layer.presentation()?.frame.intersects((shot.layer.presentation()?.frame)!) == true){
